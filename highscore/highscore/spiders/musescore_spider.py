@@ -1,11 +1,10 @@
-import json
-
 import scrapy
 from bs4 import BeautifulSoup
 from scrapy_splash import SplashRequest
 
 
 # just a scratch (TODO)
+# it should be an scrapy.Item instance!
 class Result:
     source = "page"  # obviously "musescore" in this case
     url = "url"  # adress to best possible firest page of score
@@ -57,3 +56,7 @@ class Musescore(scrapy.Spider):
                     "wait": 0.5,
                 },
             )
+
+    def clean_score_image_path(self):
+        # TODO
+        pass
