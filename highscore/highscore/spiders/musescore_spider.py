@@ -3,25 +3,15 @@ from bs4 import BeautifulSoup
 from scrapy_splash import SplashRequest
 
 
-# just a scratch (TODO)
-# it should be an scrapy.Item instance!
-class Result:
-    source = "page"  # obviously "musescore" in this case
-    url = "url"  # adress to best possible firest page of score
-    number_of_pages = 2  # not really? (but it is a cool feature!)
-
-
 class Musescore(scrapy.Spider):
     name = "musescore"
 
-    # TODO: don`t use Nothing Else Matters as default paramter!
-    def __init__(self, search_result="sheetmusic?text=nothing else matters", **kwargs):
-        self.start_urls = [f"https://musescore.com/{search_result}"]
-        super().__init__(**kwargs)
+    def __init__(self, song="nothing else matters violin", *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.start_urls = [f"https://musescore.com/sheetmusic?text={song}"]
 
     def start_requests(self):
         for url in self.start_urls:
-
             yield SplashRequest(
                 url,
                 self.parse,
@@ -38,8 +28,8 @@ class Musescore(scrapy.Spider):
         scores = soup.find_all(name="a", attrs={"class": "SA76l"})
 
         for score in scores:
-            # TODO: add number of pages!
             yield {
+                # TODO: add number of pages!
                 "source": self.name,
                 "url": score.find(name="img")["data-src"]
                 # "pages": score["pages_count"],
@@ -56,7 +46,3 @@ class Musescore(scrapy.Spider):
                     "wait": 0.5,
                 },
             )
-
-    def clean_score_image_path(self):
-        # TODO
-        pass

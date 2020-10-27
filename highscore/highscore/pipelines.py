@@ -1,3 +1,8 @@
-class HighscorePipeline:
+from itemadapter import ItemAdapter
+
+
+class HighscorePipeline(object):
+    results = []
+
     def process_item(self, item, spider):
-        return item
+        self.results.append(dict(item))
