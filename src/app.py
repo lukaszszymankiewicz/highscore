@@ -1,3 +1,4 @@
+import json
 import os
 
 from flask import Flask, render_template
@@ -17,14 +18,20 @@ def search():
     )
 
 
-"""
-@app.route("/favicon.ico")
-def favicon():
-    pass
-    return send_from_directory(
-        os.path.join(app.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon"
+@app.route("/results")
+def results():
+
+    # This is for developers purposes only!
+    # real app will scrap sites at real time!
+    with open("result.json", "r") as file:
+        data = json.load(file)
+
+    return render_template(
+        template_name_or_list="results.html",
+        title="High Score - Best Music Score Seach Engine",
+        data=data,
     )
-"""
+
 
 if __name__ == "__main__":
     app.run()
