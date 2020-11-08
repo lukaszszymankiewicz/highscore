@@ -14,7 +14,7 @@ And then go to src directory:
 cd src/scrappers/
 ```
 
-Then you can run first (by now) spider
+from where you can run scrapy spider (scrapper script)
 
 ```
 python run.py
@@ -23,10 +23,14 @@ python run.py
 by now it will scrap SONG value parameter and save it into result.json
 
 
+IN PROGESS:
+
+- Add basic frontend (gallery of score first pages)
+
+
 TODO:
 
-a) Wrap this script into some kind of app framework (flask, Django etc)
+~~-  Wrap this script into some kind of app framework (flask, Django etc)~~
 
-b) Add cleaning of urls
-
-c) Add basic frontend (gallery of score first pages)
+- Add cleaning of urls in musescore results (it is scaled down)
+- Add possibility to visit site with visible score 
