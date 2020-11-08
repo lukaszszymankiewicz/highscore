@@ -20,18 +20,19 @@
     {% block content %}
 
     <div class = "row">
-
-        <div class ="arrowcolumn">
+        <div class ="column">
             <img id="arrow" align="left" src="static/left.png" onclick="changeImage(array, -1);">
         </div>
 
-        <img id="expandedScore" src={{ data[0].url }}>
-
-        <div class ="arrowcolumn">
-            <img id="arrow" align="right" src="static/right.png" onclick="changeImage(array, 1);">
+        <div class ="column">
+            <img id="expandedScore" src={{ data[0].url }}>
         </div>
 
+        <div class ="column">
+            <img id="arrow" align="right" src="static/right.png" onclick="changeImage(array, 1);">
+        </div>
     </div>
+
     {% endblock %}
   </body>
 </html>

@@ -1,9 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .row {
   display: flex;
 }
 
-.arrowcolumn {
-  width: 34%;
+.column {
+  display: inline-block;
+  width: 33.33333%;
   align-self: center;
 }
 
@@ -12,5 +19,5 @@
 }
 
 #expandedScore {
-  max-height: 95vh;
+  max-height: 99vh;
 }
