@@ -1,7 +1,8 @@
 import json
 import os
+import subprocess
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -18,11 +19,12 @@ def search():
     )
 
 
-@app.route("/results")
+@app.route("/results", methods=["POST"])
 def results():
+    song = request.form.get("song")
+    subprocess.check_output(["scrapy", "crawl", "musescore", "-a", f"song='{song}'"])
 
-    # This is for developers purposes only!
-    with open("src/result.json", "r") as file:
+    with open("highscore/result.json") as file:
         data = json.load(file)
 
     return render_template(

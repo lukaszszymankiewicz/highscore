@@ -35,9 +35,13 @@ class Musescore(scrapy.Spider):
         scores = response.xpath('//div[@class="_3B6rQ _1QTgP"]//img//@data-src').getall()
 
         for score in scores:
-            yield {"source": self.name, "url": score}
+            yield {"source": self.name, "url": _clean_url(score)}
 
         next_page = response.xpath('//a[@isnext="true"]//@href').get()
 
         if next_page is not None:
             yield self._get_splash_request(next_page)
+
+
+def _clean_url(url: str):
+    return url.split("@")[0]
