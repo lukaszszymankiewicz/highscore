@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+}
+
+.arrowcolumn {
+  width: 34%;
+  align-self: center;
+}
+
+#arrow {
+  cursor: pointer;
+}
+
+#expandedScore {
+  max-height: 95vh;
+}
