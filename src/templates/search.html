@@ -1,26 +1,31 @@
-{% block styles %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}"/>
-{% endblock %}
+<!doctype html>
+<html>
+  <head>
+    {% block styles %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}"/>
+    {% endblock %}
+  </head>
 
+  </body>
+    {% block content %}
 
-{% block content %}
-
-<form action="/search" method="POST">
-    <div class="main">
+    <form action="/search" method="POST">
+      <div class="main">
         <div class="logo">
-            <img src="static/logo.jpg"></img>
+          <img src="static/logo.jpg"></img>
         </div>
 
         <div class="input">
-            <input type="text" id="song" name="song" size=60>
+          <input type="text" id="song" name="song" size=60>
         </div>
 
         <div class="submit">
-            <input class="submit_button" type="submit" value="Search">
+          <input class="submit_button" type="submit" value="Search">
         </div>
 
-    </div>
-</form>
+      </div>
+    </form>
 
-{% endblock %}
-
+    {% endblock %}
+  </body>
+</html>
