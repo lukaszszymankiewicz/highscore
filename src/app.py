@@ -22,14 +22,13 @@ def search():
 def results():
 
     # This is for developers purposes only!
-    # real app will scrap sites at real time!
-    # with open("src/result.json", "r") as file:
-    #     data = json.load(file)
+    with open("src/result.json", "r") as file:
+        data = json.load(file)
 
     return render_template(
         template_name_or_list="results.html",
         title="High Score - Best Music Score Seach Engine",
-        # data=data,
+        data=data,
     )
 
 
