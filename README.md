@@ -8,20 +8,11 @@ To run first build docker image:
 docker run -d -p 8050:8050 scrapinghub/splash
 ```
 
-And then go to src directory:
-
-```
-cd src/scrappers/
-```
-
-from where you can run scrapy spider (scrapper script)
+And run flask app by using command:
 
 ```
 python run.py
 ```
-
-by now it will scrap SONG value parameter and save it into result.json
-
 
 IN PROGESS:
 
@@ -30,7 +21,8 @@ IN PROGESS:
 
 TODO:
 
-~~-  Wrap this script into some kind of app framework (flask, Django etc)~~
+~~- Wrap this script into some kind of app framework (flask, Django etc)~~
+~~- Add cleaning of urls in musescore results (it is scaled down)~~
 
-- Add cleaning of urls in musescore results (it is scaled down)
 - Add possibility to visit site with visible score 
+- Add basic data bout scrapped score (number of overall score, author, number of pages and so on)
