@@ -17,8 +17,7 @@ python run.py
 IN PROGESS:
 
 Frontend features:
-- ~~ Add basic data bout scrapped score (number of overall score, author, number of pages and so
-  on) ~~
+- ~~ Add basic data bout scrapped score (number of overall score) ~~
 - ~~ prettify search bar ~~
 - ~~ prettify result page ~~
 - add progress bar (scrapy usage is taking long).
