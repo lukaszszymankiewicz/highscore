@@ -21,10 +21,16 @@ def search():
 
 @app.route("/results", methods=["POST"])
 def results():
+    # TODO: put it into some function (or maybe some scrapy middlewares.py?)
+    try:
+        os.remove("highscore/result.json")
+    except OSError:
+        pass
+
     song = request.form.get("song")
     subprocess.check_output(["scrapy", "crawl", "musescore", "-a", f"song='{song}'"])
 
-    with open("highscore/result.json") as file:
+    with open("highscore/result.json", "r") as file:
         data = json.load(file)
 
     return render_template(

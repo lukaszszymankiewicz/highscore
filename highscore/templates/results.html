@@ -6,32 +6,37 @@
   {% endblock %}
 
   {% block scripts %}
-    <script type="text/javascript" src="{{ url_for('static', filename='gallery.js') }}">
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='gallery.js') }}"></script>
 
     <script>
-      var array = JSON.parse('{{ data | tojson | safe}}');
-      var number = 0;
+      var array=JSON.parse('{{ data | tojson | safe}}');
+      var number=0;
     </script>
+
   {% endblock %}
   </head>
 
-  <body>
+  <body onload="init(array)">
+
   {% block content %}
 
-  <div class = "row">
-    <div class ="column">
+  <div class="row">
+    <div class="arrow_column">
       <img id="arrow" align="left" src="static/left.png" onclick="changeImage(array, -1);">
     </div>
 
-    <div class ="column">
+    <div class="score_column">
       <img id="expandedScore" src={{ data[0].url }}>
     </div>
 
-    <div class ="column">
+    <div class="arrow_column">
       <img id="arrow" align="right" src="static/right.png" onclick="changeImage(array, 1);">
     </div>
   </div>
+
+   <div class="info">
+     <div class="page_number" id="current_page"></div> / <div class="page_number" id="all_pages"></div>
+   </div>
 
   {% endblock %}
   </body>

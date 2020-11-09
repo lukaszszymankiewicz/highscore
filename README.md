@@ -17,17 +17,17 @@ python run.py
 IN PROGESS:
 
 Frontend features:
-- number of overall score indicator,
+- ~~ Add basic data bout scrapped score (number of overall score, author, number of pages and so
+  on) ~~
 - ~~ prettify search bar ~~
-- add progress bar.
+- ~~ prettify result page ~~
+- add progress bar (scrapy usage is taking long).
 
 TODO:
 
 - ~~ Wrap this script into some kind of app framework (flask, Django etc)~~
 - ~~ Add cleaning of urls in musescore results (it is scaled down) ~~
-
 - Add possibility to visit site with visible score 
-- Add basic data bout scrapped score (number of overall score, author, number of pages and so on)
 - Create docker-compose file for running app with one command
 - publish app on heroku (choose free options XD)
 - add keyboard control over searched results (arrow keys to move to next/previous)

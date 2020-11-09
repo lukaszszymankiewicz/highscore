@@ -1,17 +1,32 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 .row {
   display: flex;
 }
 
-.column {
+.arrow_column {
   display: inline-block;
-  width: 33.33333%;
+  width: 25%;
   align-self: center;
+}
+
+.score_column {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.info {
+  width: 7vw;
+  height: 2%;
+  background-color: #363636;
+  color: #f5f5dc;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: auto;
+  text-align: center;
+}
+
+.page_number {
+  display: inline-block;
 }
 
 #arrow {
@@ -19,5 +34,5 @@
 }
 
 #expandedScore {
-  max-height: 99vh;
+  max-height: 93vh;
 }
