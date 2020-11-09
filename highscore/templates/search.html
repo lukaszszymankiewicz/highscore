@@ -9,22 +9,19 @@
   </body>
     {% block content %}
 
-    <form action="/results" method="POST">
-      <div class="main">
-        <div class="logo">
-          <img src="static/logo.jpg"></img>
-        </div>
+        <div class="column">
 
-        <div class="input">
-          <input type="text" id="song" name="song" size=60>
-        </div>
+          <img id="logo" src="static/logo.jpg"></img>
+  
+          <form action="/results" method="POST">
+            <div class="input_field">
+              <input class="input" type="text" id="song" name="song"></input>
+            </div>
+    
+            <input class="submit_button" type="submit" value="Search"></input>
 
-        <div class="submit">
-          <input class="submit_button" type="submit" value="Search">
+          </form>
         </div>
-
-      </div>
-    </form>
 
     {% endblock %}
   </body>

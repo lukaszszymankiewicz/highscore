@@ -1,27 +1,24 @@
-.logo {
+* {
+  font-size: 18px;
   text-align: center;
+}
+
+#logo {
   padding-bottom: 35px;
 }
 
-.main {
+.column {
+  width: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 55%;
-  margin: auto;
+  top: 20%;
 }
 
-.input {
+input[type="text"] {
+  width: 25%;
+}
+
+.input_field {
   padding-bottom: 35px;
-  text-align: center;
 }
 
-.submit {
-  text-align: center;
-}
 
-.submit_button {
-  font-size: 20;
-}
