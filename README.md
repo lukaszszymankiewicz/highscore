@@ -16,13 +16,14 @@ python run.py
 
 IN PROGESS:
 
-- Add basic frontend (gallery of score first pages)
-
+Frontend features:
+- number of overall score indicator,
+- prettify search bar.
 
 TODO:
 
-~~- Wrap this script into some kind of app framework (flask, Django etc)~~
-~~- Add cleaning of urls in musescore results (it is scaled down)~~
+- ~~ Wrap this script into some kind of app framework (flask, Django etc)~~
+- ~~ Add cleaning of urls in musescore results (it is scaled down) ~~
 
 - Add possibility to visit site with visible score 
 - Add basic data bout scrapped score (number of overall score, author, number of pages and so on)
