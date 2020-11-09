@@ -4,12 +4,17 @@
     {% block styles %}
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}"/>
     {% endblock %}
+
+    {% block scripts %}
+      <script type="text/javascript" src="{{ url_for('static', filename='loading.js') }}"></script>
+    {% endblock %}
+
   </head>
 
-  </body>
+  <body>
     {% block content %}
-
-        <div class="column">
+        <div id="loading"></div>
+        <div class="column" id="content">
 
           <img id="logo" src="static/logo.jpg"></img>
   
@@ -18,11 +23,10 @@
               <input class="input" type="text" id="song" name="song"></input>
             </div>
     
-            <input class="submit_button" type="submit" value="Search"></input>
+            <input class="submit_button" type="submit" value="Search" onclick="loading();"></input>
 
           </form>
         </div>
-
     {% endblock %}
   </body>
 </html>

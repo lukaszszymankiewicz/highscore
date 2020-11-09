@@ -22,4 +22,11 @@ input[type="text"] {
   padding-bottom: 35px;
 }
 
-
+#loading {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  background: url(/static/loading.gif) no-repeat;
+  cursor: wait;
+  background-position: center;
+}
