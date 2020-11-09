@@ -18,7 +18,7 @@ IN PROGESS:
 
 Frontend features:
 - number of overall score indicator,
-- prettify search bar,
+- ~~ prettify search bar ~~
 - add progress bar.
 
 TODO:
@@ -30,3 +30,4 @@ TODO:
 - Add basic data bout scrapped score (number of overall score, author, number of pages and so on)
 - Create docker-compose file for running app with one command
 - publish app on heroku (choose free options XD)
+- add keyboard control over searched results (arrow keys to move to next/previous)
