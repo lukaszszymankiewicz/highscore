@@ -1,20 +1,24 @@
+a {
+  display: inline-block;
+  text-decoration: none;
+}
 .row {
   display: flex;
 }
-
 .arrow_column {
   display: inline-block;
   width: 25%;
   align-self: center;
 }
-
 .score_column {
   display: inline-block;
   width: 50%;
   text-align: center;
 }
-
 .info {
+  text-align: center;
+}
+.box {
   width: 7vw;
   height: 2%;
   background-color: #363636;
@@ -23,16 +27,18 @@
   font-size: 18px;
   margin: auto;
   text-align: center;
+  display: inline-block;
 }
-
 .page_number {
   display: inline-block;
 }
-
 #arrow {
   cursor: pointer;
 }
-
 #expandedScore {
   max-height: 93vh;
+}
+#button {
+  background-color: #7fff00;
+  color: #000000;
 }

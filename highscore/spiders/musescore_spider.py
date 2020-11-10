@@ -32,10 +32,13 @@ class Musescore(scrapy.Spider):
             yield self._get_splash_request(url)
 
     def parse(self, response):
-        scores = response.xpath('//div[@class="_3B6rQ _1QTgP"]//img//@data-src').getall()
+        urls = response.xpath('//div[@class="_3B6rQ _1QTgP"]//img//@data-src').getall()
+        links = response.xpath(
+            '//a[@class="_36lU2 _3qfU_ _38TLP _1Us9e _1OS6i _15kzJ"]//@href'
+        ).getall()
 
-        for score in scores:
-            yield {"source": self.name, "url": _clean_url(score)}
+        for url, link in zip(urls, links):
+            yield {"source": self.name, "url": _clean_url(url), "link": link}
 
         next_page = response.xpath('//a[@isnext="true"]//@href').get()
 

@@ -35,7 +35,12 @@
   </div>
 
    <div class="info">
-     <div class="page_number" id="current_page"></div> / <div class="page_number" id="all_pages"></div>
+     <a id="visit_link" href={{ data[0].link }}>
+       <div class="box" id="button">VISIT</div>
+     </a>
+     <div class="box" id="pages">
+       <div class="page_number" id="current_page"></div> / <div class="page_number" id="all_pages"></div>
+     </div>
    </div>
 
   {% endblock %}

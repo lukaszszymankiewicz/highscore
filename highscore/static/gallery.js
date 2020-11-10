@@ -10,6 +10,9 @@ function changeImage(array, direction) {
     var imageData = array[number];
     expandScore.src = imageData.url;
 
+    var visitLink = document.getElementById("visit_link")
+    visitLink.href = imageData.link
+
     setCurrentPage(number + 1);
     setAllPagesNumber(array.length);
 }
