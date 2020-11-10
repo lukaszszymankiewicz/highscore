@@ -16,6 +16,7 @@
 
 input[type="text"] {
   width: 25%;
+  text-align: left;
 }
 
 .input_field {
@@ -28,5 +29,5 @@ input[type="text"] {
   display: none;
   background: url(/static/loading.gif) no-repeat;
   cursor: wait;
-  background-position: center;
+  background-position: 50% 54%;
 }
