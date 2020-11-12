@@ -26,9 +26,13 @@ TODO:
 
 - ~~ Wrap this script into some kind of app framework (flask, Django etc)~~
 - ~~ Add cleaning of urls in musescore results (it is scaled down) ~~
-- Add possibility to visit site with visible score 
+- ~~ Add possibility to visit site with visible score ~~
 - Add possibility to download scores (with convertion to default image extension)
-- Add some validation
+- Show some indication if there is none results found (another endpoint?)
+- Add some validation for url (Item Pipelines and DropItem)
 - Create docker-compose file for running app with one command
 - publish app on heroku (choose free options XD)
+
+NICE TO HAVE (LATER DEVELOPMENT)
 - add keyboard control over searched results (arrow keys to move to next/previous)
+- sort scores by its "rating"
