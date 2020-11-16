@@ -6,40 +6,49 @@
   {% endblock %}
 
   {% block scripts %}
-    <script type="text/javascript" src="{{ url_for('static', filename='gallery.js') }}"></script>
-
     <script>
       var array=JSON.parse('{{ data | tojson | safe}}');
       var number=0;
     </script>
 
+    <script type="text/javascript" src="{{ url_for('static', filename='gallery.js') }}"></script>
   {% endblock %}
   </head>
 
-  <body onload="init(array)">
+  <body onload="initializePage(array)">
 
   {% block content %}
 
-  <div class="row">
-    <div class="arrow_column">
-      <img id="arrow" align="left" src="static/left.png" onclick="changeImage(array, -1);">
-    </div>
-
-    <div class="score_column">
-      <img id="expandedScore" src={{ data[0].url }}>
-    </div>
-
-    <div class="arrow_column">
-      <img id="arrow" align="right" src="static/right.png" onclick="changeImage(array, 1);">
-    </div>
+  <div id="no_results">
+      <img src="static/no_results.png"></img><br>
+      <h2>No results, sorry :(</h2>
+      <h3>
+          <a href="search">GO BACK </a>
+      </h3>
   </div>
 
-   <div class="info">
-     <a id="visit_link" href={{ data[0].link }}>
-       <div class="box" id="button">VISIT</div>
-     </a>
-     <div class="box" id="pages">
-       <div class="page_number" id="current_page"></div> / <div class="page_number" id="all_pages"></div>
+  <div id="content">
+    <div class="row">
+      <div class="arrow_column">
+        <img id="arrow" align="left" src="static/left.png" onclick="changeImage(array, -1);">
+      </div>
+
+      <div class="score_column">
+        <img id="expandedScore" src="">
+      </div>
+
+      <div class="arrow_column">
+        <img id="arrow" align="right" src="static/right.png" onclick="changeImage(array, 1);">
+      </div>
+    </div>
+
+     <div class="info">
+       <a id="visit_link" href="#0">
+         <div class="box" id="button">VISIT</div>
+       </a>
+       <div class="box" id="pages">
+         <div class="page_number" id="current_page"></div> / <div class="page_number" id="all_pages"></div>
+       </div>
      </div>
    </div>
 

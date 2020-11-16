@@ -30,13 +30,17 @@ def results():
     song = request.form.get("song")
     subprocess.check_output(["scrapy", "crawl", "musescore", "-a", f"song='{song}'"])
 
-    with open("highscore/result.json", "r") as file:
-        data = json.load(file)
+    maybe it is worth to implement some proxy to use this file?
+    if os.stat("highscore/result.json").st_size == 0:
+        data = []
+    else:
+        with open("highscore/result.json", "r") as file:
+            data = json.load(file)
 
     return render_template(
         template_name_or_list="results.html",
         title="High Score - Best Music Score Seach Engine",
-        data=data,
+        data=[],
     )
 
 
